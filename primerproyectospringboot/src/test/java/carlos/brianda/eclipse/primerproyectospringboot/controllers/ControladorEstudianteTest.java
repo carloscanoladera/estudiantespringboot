@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.MediaType;
@@ -31,6 +32,7 @@ class ControladorEstudianteTest {
 
 	@Mock
 	private ServicioEstudiante servicioEstudiante;
+	@InjectMocks
 	private ControladorEstudiante controladorEstudiante;
     private MockMvc mockMvc;	
 	@BeforeEach
@@ -38,7 +40,7 @@ class ControladorEstudianteTest {
 		
 		MockitoAnnotations.openMocks(this);
 		
-		controladorEstudiante = new ControladorEstudiante(servicioEstudiante);
+		//controladorEstudiante = new ControladorEstudiante(servicioEstudiante);
 	    mockMvc = MockMvcBuilders.standaloneSetup(controladorEstudiante)
                 .build();
 	
