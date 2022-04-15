@@ -58,7 +58,7 @@ class ControladorEstudianteTest {
 		
 	}
 	
-	
+	@Test
 	void testUpdateEstudianteForm() throws Exception {
 		
 		
@@ -67,9 +67,9 @@ class ControladorEstudianteTest {
 
         when(servicioEstudiante.save(any())).thenReturn(estudiante);
 
-        mockMvc.perform(post("/recipe")
+        mockMvc.perform(post("/estudiante/")
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                .param("2", "")
+                .param("id", "2")
                 .param("nombre", "nombre2")
                 .param("apellidos", "apellidos2")
                 .param("Curso", "Curso2")
